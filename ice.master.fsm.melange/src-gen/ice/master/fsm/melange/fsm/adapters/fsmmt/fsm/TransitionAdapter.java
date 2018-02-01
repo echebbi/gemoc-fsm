@@ -48,6 +48,18 @@ public class TransitionAdapter extends EObjectAdapter<Transition> implements ice
   }
   
   @Override
+  public State getSource() {
+    return (State) adaptersFactory.createAdapter(adaptee.getSource(), eResource);
+  }
+  
+  @Override
+  public void setSource(final State o) {
+    if (o != null)
+    	adaptee.setSource(((ice.master.fsm.melange.fsm.adapters.fsmmt.fsm.StateAdapter) o).getAdaptee());
+    else adaptee.setSource(null);
+  }
+  
+  @Override
   public boolean accepts(final String event) {
     return ice.master.fsm.melange.fsm.aspects.TransitionAspect.accepts(adaptee, event
     );
@@ -77,6 +89,8 @@ public class TransitionAdapter extends EObjectAdapter<Transition> implements ice
     		return getTarget();
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__TRIGGER:
     		return getTrigger();
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__SOURCE:
+    		return getSource();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -91,6 +105,8 @@ public class TransitionAdapter extends EObjectAdapter<Transition> implements ice
     		return getTarget() != null;
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__TRIGGER:
     		return getTrigger() != TRIGGER_EDEFAULT;
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__SOURCE:
+    		return getSource() != null;
     }
     
     return super.eIsSet(featureID);
@@ -112,6 +128,11 @@ public class TransitionAdapter extends EObjectAdapter<Transition> implements ice
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__TRIGGER:
     		setTrigger(
     		(java.lang.String)
+    		 newValue);
+    		return;
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.TRANSITION__SOURCE:
+    		setSource(
+    		(ice.master.fsm.melange.fsmmt.fsm.State)
     		 newValue);
     		return;
     }

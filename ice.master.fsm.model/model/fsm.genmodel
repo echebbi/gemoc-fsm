@@ -20,12 +20,13 @@
     </genClasses>
     <genClasses ecoreClass="fsm.ecore#//State">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fsm.ecore#//State/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fsm.ecore#//State/outgoings"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference fsm.ecore#//State/outgoings"/>
     </genClasses>
     <genClasses ecoreClass="fsm.ecore#//Transition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fsm.ecore#//Transition/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fsm.ecore#//Transition/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fsm.ecore#//Transition/trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fsm.ecore#//Transition/source"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

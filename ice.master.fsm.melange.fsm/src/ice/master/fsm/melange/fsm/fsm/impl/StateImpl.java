@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -114,7 +114,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getOutgoings() {
 		if (outgoings == null) {
-			outgoings = new EObjectContainmentEList<Transition>(Transition.class, this, FsmPackage.STATE__OUTGOINGS);
+			outgoings = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, FsmPackage.STATE__OUTGOINGS, FsmPackage.TRANSITION__SOURCE);
 		}
 		return outgoings;
 	}
@@ -150,6 +150,21 @@ public class StateImpl extends EObjectImpl implements State {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case FsmPackage.STATE__OUTGOINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoings()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

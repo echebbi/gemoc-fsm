@@ -56,6 +56,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="FSMMT.ecore#//Transition/trigger"/>
       </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//Transition/source"/>
+      </genFeatures>
       <genOperations>
         <ecoreOperation href="FSMMT.ecore#//Transition/accepts"/>
         <genParameters>

@@ -176,13 +176,22 @@ public interface FsmPackage extends EPackage {
 	int TRANSITION__TRIGGER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SOURCE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 
 	/**
@@ -304,6 +313,17 @@ public interface FsmPackage extends EPackage {
 	EAttribute getTransition_Trigger();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ice.master.fsm.melange.fsmmt.fsm.Transition#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Source</em>'.
+	 * @see ice.master.fsm.melange.fsmmt.fsm.Transition#getSource()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Source();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,6 +438,14 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__TRIGGER = eINSTANCE.getTransition_Trigger();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__SOURCE = eINSTANCE.getTransition_Source();
 
 	}
 

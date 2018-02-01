@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ice.master.fsm.model.fsm.Transition#getName <em>Name</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.Transition#getTarget <em>Target</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.Transition#getTrigger <em>Trigger</em>}</li>
+ *   <li>{@link ice.master.fsm.model.fsm.Transition#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see ice.master.fsm.model.fsm.FsmPackage#getTransition()
@@ -103,5 +104,33 @@ public interface Transition extends EObject {
 	 * @generated
 	 */
 	void setTrigger(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ice.master.fsm.model.fsm.State#getOutgoings <em>Outgoings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' container reference.
+	 * @see #setSource(State)
+	 * @see ice.master.fsm.model.fsm.FsmPackage#getTransition_Source()
+	 * @see ice.master.fsm.model.fsm.State#getOutgoings
+	 * @model opposite="outgoings" required="true" transient="false"
+	 * @generated
+	 */
+	State getSource();
+
+	/**
+	 * Sets the value of the '{@link ice.master.fsm.model.fsm.Transition#getSource <em>Source</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' container reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(State value);
 
 } // Transition

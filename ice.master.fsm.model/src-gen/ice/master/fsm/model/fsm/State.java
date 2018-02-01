@@ -53,6 +53,7 @@ public interface State extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Outgoings</b></em>' containment reference list.
 	 * The list contents are of type {@link ice.master.fsm.model.fsm.Transition}.
+	 * It is bidirectional and its opposite is '{@link ice.master.fsm.model.fsm.Transition#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Outgoings</em>' containment reference list isn't clear,
@@ -61,7 +62,8 @@ public interface State extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoings</em>' containment reference list.
 	 * @see ice.master.fsm.model.fsm.FsmPackage#getState_Outgoings()
-	 * @model containment="true"
+	 * @see ice.master.fsm.model.fsm.Transition#getSource
+	 * @model opposite="source" containment="true"
 	 * @generated
 	 */
 	EList<Transition> getOutgoings();
