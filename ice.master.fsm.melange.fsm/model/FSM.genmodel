@@ -5,14 +5,17 @@
     <ecorePackage href="FSM.ecore#/"/>
     <genClasses>
       <ecoreClass href="FSM.ecore#//FiniteStateMachine"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/states"/>
-      </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/initial"/>
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="FSM.ecore#//FiniteStateMachine/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/states"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/current"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="FSM.ecore#//FiniteStateMachine/on"/>
@@ -31,6 +34,9 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//State/outgoings"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//State/machine"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="FSM.ecore#//State/on"/>

@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ice.master.fsm.model.fsm.FiniteStateMachine#getStates <em>States</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.FiniteStateMachine#getInitial <em>Initial</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.FiniteStateMachine#getName <em>Name</em>}</li>
+ *   <li>{@link ice.master.fsm.model.fsm.FiniteStateMachine#getStates <em>States</em>}</li>
  * </ul>
  *
  * @see ice.master.fsm.model.fsm.FsmPackage#getFiniteStateMachine()
@@ -28,6 +28,7 @@ public interface FiniteStateMachine extends EObject {
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
 	 * The list contents are of type {@link ice.master.fsm.model.fsm.State}.
+	 * It is bidirectional and its opposite is '{@link ice.master.fsm.model.fsm.State#getMachine <em>Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>States</em>' containment reference list isn't clear,
@@ -36,7 +37,8 @@ public interface FiniteStateMachine extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>States</em>' containment reference list.
 	 * @see ice.master.fsm.model.fsm.FsmPackage#getFiniteStateMachine_States()
-	 * @model containment="true"
+	 * @see ice.master.fsm.model.fsm.State#getMachine
+	 * @model opposite="machine" containment="true"
 	 * @generated
 	 */
 	EList<State> getStates();

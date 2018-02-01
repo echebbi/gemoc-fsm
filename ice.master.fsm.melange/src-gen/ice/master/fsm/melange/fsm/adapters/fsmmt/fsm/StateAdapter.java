@@ -3,6 +3,7 @@ package ice.master.fsm.melange.fsm.adapters.fsmmt.fsm;
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import ice.master.fsm.melange.fsm.adapters.fsmmt.FSMMTAdaptersFactory;
 import ice.master.fsm.melange.fsm.fsm.State;
+import ice.master.fsm.melange.fsmmt.fsm.FiniteStateMachine;
 import ice.master.fsm.melange.fsmmt.fsm.Transition;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
@@ -37,6 +38,18 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
   }
   
   @Override
+  public FiniteStateMachine getMachine() {
+    return (FiniteStateMachine) adaptersFactory.createAdapter(adaptee.getMachine(), eResource);
+  }
+  
+  @Override
+  public void setMachine(final FiniteStateMachine o) {
+    if (o != null)
+    	adaptee.setMachine(((ice.master.fsm.melange.fsm.adapters.fsmmt.fsm.FiniteStateMachineAdapter) o).getAdaptee());
+    else adaptee.setMachine(null);
+  }
+  
+  @Override
   public ice.master.fsm.melange.fsmmt.fsm.State on(final String event) {
     return (ice.master.fsm.melange.fsmmt.fsm.State) adaptersFactory.createAdapter(ice.master.fsm.melange.fsm.aspects.StateAspect.on(adaptee, event
     ), eResource);
@@ -66,6 +79,8 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
     		return getName();
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__OUTGOINGS:
     		return getOutgoings();
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__MACHINE:
+    		return getMachine();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -78,6 +93,8 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
     		return getName() != NAME_EDEFAULT;
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__OUTGOINGS:
     		return getOutgoings() != null && !getOutgoings().isEmpty();
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__MACHINE:
+    		return getMachine() != null;
     }
     
     return super.eIsSet(featureID);
@@ -94,6 +111,11 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
     	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__OUTGOINGS:
     		getOutgoings().clear();
     		getOutgoings().addAll((Collection) newValue);
+    		return;
+    	case ice.master.fsm.melange.fsmmt.fsm.FsmPackage.STATE__MACHINE:
+    		setMachine(
+    		(ice.master.fsm.melange.fsmmt.fsm.FiniteStateMachine)
+    		 newValue);
     		return;
     }
     

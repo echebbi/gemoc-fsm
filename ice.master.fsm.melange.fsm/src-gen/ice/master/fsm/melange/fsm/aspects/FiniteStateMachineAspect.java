@@ -13,6 +13,11 @@ import java.util.Scanner;
 @Aspect(className = FiniteStateMachine.class)
 @SuppressWarnings("all")
 public class FiniteStateMachineAspect {
+  private static void enter(final FiniteStateMachine _self, final State next) {
+    final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext.getSelf(_self);
+    _privk3_enter(_self_, _self,next);;
+  }
+  
   @Step
   public static void on(final FiniteStateMachine _self, final String event) {
 	final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext
@@ -42,16 +47,29 @@ public class FiniteStateMachineAspect {
 	;
 }
   
-  private static State current(final FiniteStateMachine _self) {
-    final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_current(_self_, _self);;
-    return (ice.master.fsm.melange.fsm.fsm.State)result;
-  }
+  public static State current(final FiniteStateMachine _self) {
+	final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_current(_self_, _self);
+	;
+	return (ice.master.fsm.melange.fsm.fsm.State) result;
+}
   
-  private static void current(final FiniteStateMachine _self, final State current) {
-    final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext.getSelf(_self);
-    _privk3_current(_self_, _self,current);;
+  public static void current(final FiniteStateMachine _self, final State current) {
+	final ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_ = ice.master.fsm.melange.fsm.aspects.FiniteStateMachineAspectFiniteStateMachineAspectContext
+			.getSelf(_self);
+	_privk3_current(_self_, _self, current);
+	;
+}
+  
+  protected static void _privk3_enter(final FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_, final FiniteStateMachine _self, final State next) {
+    FiniteStateMachineAspect.current(_self, next);
+    State _current = FiniteStateMachineAspect.current(_self);
+    boolean _tripleNotEquals = (_current != null);
+    if (_tripleNotEquals) {
+      StateAspect.onEnter(FiniteStateMachineAspect.current(_self));
+    }
   }
   
   protected static void _privk3_on(final FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_, final FiniteStateMachine _self, final String event) {
@@ -63,13 +81,12 @@ public class FiniteStateMachineAspect {
     State next = StateAspect.on(FiniteStateMachineAspect.current(_self), event);
     if ((next != null)) {
       StateAspect.onExit(FiniteStateMachineAspect.current(_self));
-      FiniteStateMachineAspect.current(_self, next);
-      StateAspect.onEnter(FiniteStateMachineAspect.current(_self));
+      FiniteStateMachineAspect.enter(_self, next);
     }
   }
   
   protected static void _privk3_main(final FiniteStateMachineAspectFiniteStateMachineAspectProperties _self_, final FiniteStateMachine _self) {
-    FiniteStateMachineAspect.current(_self, _self.getInitial());
+    FiniteStateMachineAspect.enter(_self, _self.getInitial());
     final Scanner cli = new Scanner(System.in);
     String event = null;
     boolean stopped = false;

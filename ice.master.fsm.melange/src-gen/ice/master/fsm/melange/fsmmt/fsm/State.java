@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ice.master.fsm.melange.fsmmt.fsm.State#getName <em>Name</em>}</li>
  *   <li>{@link ice.master.fsm.melange.fsmmt.fsm.State#getOutgoings <em>Outgoings</em>}</li>
+ *   <li>{@link ice.master.fsm.melange.fsmmt.fsm.State#getMachine <em>Machine</em>}</li>
  * </ul>
  *
  * @see ice.master.fsm.melange.fsmmt.fsm.FsmPackage#getState()
@@ -67,6 +68,34 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	EList<Transition> getOutgoings();
+
+	/**
+	 * Returns the value of the '<em><b>Machine</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ice.master.fsm.melange.fsmmt.fsm.FiniteStateMachine#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Machine</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Machine</em>' container reference.
+	 * @see #setMachine(FiniteStateMachine)
+	 * @see ice.master.fsm.melange.fsmmt.fsm.FsmPackage#getState_Machine()
+	 * @see ice.master.fsm.melange.fsmmt.fsm.FiniteStateMachine#getStates
+	 * @model opposite="states" required="true" transient="false"
+	 * @generated
+	 */
+	FiniteStateMachine getMachine();
+
+	/**
+	 * Sets the value of the '{@link ice.master.fsm.melange.fsmmt.fsm.State#getMachine <em>Machine</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Machine</em>' container reference.
+	 * @see #getMachine()
+	 * @generated
+	 */
+	void setMachine(FiniteStateMachine value);
 
 	/**
 	 * <!-- begin-user-doc -->

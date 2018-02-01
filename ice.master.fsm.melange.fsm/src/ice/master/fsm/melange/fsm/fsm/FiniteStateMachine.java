@@ -15,9 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates <em>States</em>}</li>
  *   <li>{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getInitial <em>Initial</em>}</li>
  *   <li>{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getName <em>Name</em>}</li>
+ *   <li>{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates <em>States</em>}</li>
+ *   <li>{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getCurrent <em>Current</em>}</li>
  * </ul>
  *
  * @see ice.master.fsm.melange.fsm.fsm.FsmPackage#getFiniteStateMachine()
@@ -25,22 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface FiniteStateMachine extends EObject {
-	/**
-	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
-	 * The list contents are of type {@link ice.master.fsm.melange.fsm.fsm.State}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>States</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' containment reference list.
-	 * @see ice.master.fsm.melange.fsm.fsm.FsmPackage#getFiniteStateMachine_States()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<State> getStates();
-
 	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -92,6 +77,50 @@ public interface FiniteStateMachine extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
+	 * The list contents are of type {@link ice.master.fsm.melange.fsm.fsm.State}.
+	 * It is bidirectional and its opposite is '{@link ice.master.fsm.melange.fsm.fsm.State#getMachine <em>Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>States</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>States</em>' containment reference list.
+	 * @see ice.master.fsm.melange.fsm.fsm.FsmPackage#getFiniteStateMachine_States()
+	 * @see ice.master.fsm.melange.fsm.fsm.State#getMachine
+	 * @model opposite="machine" containment="true"
+	 * @generated
+	 */
+	EList<State> getStates();
+
+	/**
+	 * Returns the value of the '<em><b>Current</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current</em>' reference.
+	 * @see #setCurrent(State)
+	 * @see ice.master.fsm.melange.fsm.fsm.FsmPackage#getFiniteStateMachine_Current()
+	 * @model
+	 * @generated
+	 */
+	State getCurrent();
+
+	/**
+	 * Sets the value of the '{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getCurrent <em>Current</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current</em>' reference.
+	 * @see #getCurrent()
+	 * @generated
+	 */
+	void setCurrent(State value);
 
 	/**
 	 * <!-- begin-user-doc -->

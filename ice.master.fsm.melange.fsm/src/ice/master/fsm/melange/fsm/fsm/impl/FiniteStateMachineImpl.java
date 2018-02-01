@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -30,24 +30,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ice.master.fsm.melange.fsm.fsm.impl.FiniteStateMachineImpl#getStates <em>States</em>}</li>
  *   <li>{@link ice.master.fsm.melange.fsm.fsm.impl.FiniteStateMachineImpl#getInitial <em>Initial</em>}</li>
  *   <li>{@link ice.master.fsm.melange.fsm.fsm.impl.FiniteStateMachineImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ice.master.fsm.melange.fsm.fsm.impl.FiniteStateMachineImpl#getStates <em>States</em>}</li>
+ *   <li>{@link ice.master.fsm.melange.fsm.fsm.impl.FiniteStateMachineImpl#getCurrent <em>Current</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMachine {
-	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStates()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<State> states;
-
 	/**
 	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -79,6 +70,26 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStates()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<State> states;
+
+	/**
+	 * The cached value of the '{@link #getCurrent() <em>Current</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrent()
+	 * @generated
+	 * @ordered
+	 */
+	protected State current;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,18 +106,6 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	@Override
 	protected EClass eStaticClass() {
 		return FsmPackage.Literals.FINITE_STATE_MACHINE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<State> getStates() {
-		if (states == null) {
-			states = new EObjectContainmentEList<State>(State.class, this, FsmPackage.FINITE_STATE_MACHINE__STATES);
-		}
-		return states;
 	}
 
 	/**
@@ -173,6 +172,56 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<State> getStates() {
+		if (states == null) {
+			states = new EObjectContainmentWithInverseEList<State>(State.class, this, FsmPackage.FINITE_STATE_MACHINE__STATES, FsmPackage.STATE__MACHINE);
+		}
+		return states;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State getCurrent() {
+		if (current != null && current.eIsProxy()) {
+			InternalEObject oldCurrent = (InternalEObject)current;
+			current = (State)eResolveProxy(oldCurrent);
+			if (current != oldCurrent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.FINITE_STATE_MACHINE__CURRENT, oldCurrent, current));
+			}
+		}
+		return current;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetCurrent() {
+		return current;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCurrent(State newCurrent) {
+		State oldCurrent = current;
+		current = newCurrent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.FINITE_STATE_MACHINE__CURRENT, oldCurrent, current));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void on(String event) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -188,6 +237,21 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case FsmPackage.FINITE_STATE_MACHINE__STATES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStates()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -212,13 +276,16 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.FINITE_STATE_MACHINE__STATES:
-				return getStates();
 			case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 				if (resolve) return getInitial();
 				return basicGetInitial();
 			case FsmPackage.FINITE_STATE_MACHINE__NAME:
 				return getName();
+			case FsmPackage.FINITE_STATE_MACHINE__STATES:
+				return getStates();
+			case FsmPackage.FINITE_STATE_MACHINE__CURRENT:
+				if (resolve) return getCurrent();
+				return basicGetCurrent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -232,15 +299,18 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.FINITE_STATE_MACHINE__STATES:
-				getStates().clear();
-				getStates().addAll((Collection<? extends State>)newValue);
-				return;
 			case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 				setInitial((State)newValue);
 				return;
 			case FsmPackage.FINITE_STATE_MACHINE__NAME:
 				setName((String)newValue);
+				return;
+			case FsmPackage.FINITE_STATE_MACHINE__STATES:
+				getStates().clear();
+				getStates().addAll((Collection<? extends State>)newValue);
+				return;
+			case FsmPackage.FINITE_STATE_MACHINE__CURRENT:
+				setCurrent((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,14 +324,17 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.FINITE_STATE_MACHINE__STATES:
-				getStates().clear();
-				return;
 			case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 				setInitial((State)null);
 				return;
 			case FsmPackage.FINITE_STATE_MACHINE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case FsmPackage.FINITE_STATE_MACHINE__STATES:
+				getStates().clear();
+				return;
+			case FsmPackage.FINITE_STATE_MACHINE__CURRENT:
+				setCurrent((State)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -275,12 +348,14 @@ public class FiniteStateMachineImpl extends EObjectImpl implements FiniteStateMa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.FINITE_STATE_MACHINE__STATES:
-				return states != null && !states.isEmpty();
 			case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 				return initial != null;
 			case FsmPackage.FINITE_STATE_MACHINE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case FsmPackage.FINITE_STATE_MACHINE__STATES:
+				return states != null && !states.isEmpty();
+			case FsmPackage.FINITE_STATE_MACHINE__CURRENT:
+				return current != null;
 		}
 		return super.eIsSet(featureID);
 	}

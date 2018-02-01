@@ -18,8 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -30,24 +29,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ice.master.fsm.model.fsm.impl.FiniteStateMachineImpl#getStates <em>States</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.impl.FiniteStateMachineImpl#getInitial <em>Initial</em>}</li>
  *   <li>{@link ice.master.fsm.model.fsm.impl.FiniteStateMachineImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ice.master.fsm.model.fsm.impl.FiniteStateMachineImpl#getStates <em>States</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container implements FiniteStateMachine {
-	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStates()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<State> states;
-
 	/**
 	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -79,6 +68,16 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStates()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<State> states;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -104,9 +103,25 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<State> getStates() {
 		if (states == null) {
-			states = new EObjectContainmentEList<State>(State.class, this, FsmPackage.FINITE_STATE_MACHINE__STATES);
+			states = new EObjectContainmentWithInverseEList<State>(State.class, this,
+					FsmPackage.FINITE_STATE_MACHINE__STATES, FsmPackage.STATE__MACHINE);
 		}
 		return states;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case FsmPackage.FINITE_STATE_MACHINE__STATES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStates()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -193,14 +208,14 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FsmPackage.FINITE_STATE_MACHINE__STATES:
-			return getStates();
 		case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 			if (resolve)
 				return getInitial();
 			return basicGetInitial();
 		case FsmPackage.FINITE_STATE_MACHINE__NAME:
 			return getName();
+		case FsmPackage.FINITE_STATE_MACHINE__STATES:
+			return getStates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,15 +229,15 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FsmPackage.FINITE_STATE_MACHINE__STATES:
-			getStates().clear();
-			getStates().addAll((Collection<? extends State>) newValue);
-			return;
 		case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 			setInitial((State) newValue);
 			return;
 		case FsmPackage.FINITE_STATE_MACHINE__NAME:
 			setName((String) newValue);
+			return;
+		case FsmPackage.FINITE_STATE_MACHINE__STATES:
+			getStates().clear();
+			getStates().addAll((Collection<? extends State>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,14 +251,14 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FsmPackage.FINITE_STATE_MACHINE__STATES:
-			getStates().clear();
-			return;
 		case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 			setInitial((State) null);
 			return;
 		case FsmPackage.FINITE_STATE_MACHINE__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case FsmPackage.FINITE_STATE_MACHINE__STATES:
+			getStates().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -257,12 +272,12 @@ public class FiniteStateMachineImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FsmPackage.FINITE_STATE_MACHINE__STATES:
-			return states != null && !states.isEmpty();
 		case FsmPackage.FINITE_STATE_MACHINE__INITIAL:
 			return initial != null;
 		case FsmPackage.FINITE_STATE_MACHINE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FsmPackage.FINITE_STATE_MACHINE__STATES:
+			return states != null && !states.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

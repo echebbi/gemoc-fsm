@@ -10,10 +10,13 @@
     <eOperations name="main">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1" eType="//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="//State"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1" eType="//State" containment="true" eOpposite="//State/machine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="current" unique="false" eType="//State">
+      <eAnnotations source="aspect"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State">
@@ -33,6 +36,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoings" upperBound="-1" eType="//Transition" containment="true" eOpposite="//Transition/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="machine" lowerBound="1" eType="//FiniteStateMachine" eOpposite="//FiniteStateMachine/states"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eOperations name="accepts">

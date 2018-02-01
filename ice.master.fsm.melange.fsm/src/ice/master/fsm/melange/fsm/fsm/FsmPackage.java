@@ -66,22 +66,13 @@ public interface FsmPackage extends EPackage {
 	int FINITE_STATE_MACHINE = 0;
 
 	/**
-	 * The feature id for the '<em><b>States</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINITE_STATE_MACHINE__STATES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Initial</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINITE_STATE_MACHINE__INITIAL = 1;
+	int FINITE_STATE_MACHINE__INITIAL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -90,7 +81,25 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FINITE_STATE_MACHINE__NAME = 2;
+	int FINITE_STATE_MACHINE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>States</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINITE_STATE_MACHINE__STATES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Current</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINITE_STATE_MACHINE__CURRENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Finite State Machine</em>' class.
@@ -99,7 +108,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FINITE_STATE_MACHINE_FEATURE_COUNT = 3;
+	int FINITE_STATE_MACHINE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ice.master.fsm.melange.fsm.fsm.impl.StateImpl <em>State</em>}' class.
@@ -130,13 +139,22 @@ public interface FsmPackage extends EPackage {
 	int STATE__OUTGOINGS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Machine</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__MACHINE = 2;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 2;
+	int STATE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ice.master.fsm.melange.fsm.fsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -205,17 +223,6 @@ public interface FsmPackage extends EPackage {
 	EClass getFiniteStateMachine();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates <em>States</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>States</em>'.
-	 * @see ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates()
-	 * @see #getFiniteStateMachine()
-	 * @generated
-	 */
-	EReference getFiniteStateMachine_States();
-
-	/**
 	 * Returns the meta object for the reference '{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getInitial <em>Initial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +243,28 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFiniteStateMachine_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>States</em>'.
+	 * @see ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getStates()
+	 * @see #getFiniteStateMachine()
+	 * @generated
+	 */
+	EReference getFiniteStateMachine_States();
+
+	/**
+	 * Returns the meta object for the reference '{@link ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getCurrent <em>Current</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Current</em>'.
+	 * @see ice.master.fsm.melange.fsm.fsm.FiniteStateMachine#getCurrent()
+	 * @see #getFiniteStateMachine()
+	 * @generated
+	 */
+	EReference getFiniteStateMachine_Current();
 
 	/**
 	 * Returns the meta object for class '{@link ice.master.fsm.melange.fsm.fsm.State <em>State</em>}'.
@@ -268,6 +297,17 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_Outgoings();
+
+	/**
+	 * Returns the meta object for the container reference '{@link ice.master.fsm.melange.fsm.fsm.State#getMachine <em>Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Machine</em>'.
+	 * @see ice.master.fsm.melange.fsm.fsm.State#getMachine()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_Machine();
 
 	/**
 	 * Returns the meta object for class '{@link ice.master.fsm.melange.fsm.fsm.Transition <em>Transition</em>}'.
@@ -356,14 +396,6 @@ public interface FsmPackage extends EPackage {
 		EClass FINITE_STATE_MACHINE = eINSTANCE.getFiniteStateMachine();
 
 		/**
-		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FINITE_STATE_MACHINE__STATES = eINSTANCE.getFiniteStateMachine_States();
-
-		/**
 		 * The meta object literal for the '<em><b>Initial</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -378,6 +410,22 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FINITE_STATE_MACHINE__NAME = eINSTANCE.getFiniteStateMachine_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINITE_STATE_MACHINE__STATES = eINSTANCE.getFiniteStateMachine_States();
+
+		/**
+		 * The meta object literal for the '<em><b>Current</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINITE_STATE_MACHINE__CURRENT = eINSTANCE.getFiniteStateMachine_Current();
 
 		/**
 		 * The meta object literal for the '{@link ice.master.fsm.melange.fsm.fsm.impl.StateImpl <em>State</em>}' class.
@@ -404,6 +452,14 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__OUTGOINGS = eINSTANCE.getState_Outgoings();
+
+		/**
+		 * The meta object literal for the '<em><b>Machine</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__MACHINE = eINSTANCE.getState_Machine();
 
 		/**
 		 * The meta object literal for the '{@link ice.master.fsm.melange.fsm.fsm.impl.TransitionImpl <em>Transition</em>}' class.

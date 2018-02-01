@@ -65,6 +65,7 @@ public class FiniteStateMachineItemProvider
 
 			addInitialPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addCurrentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class FiniteStateMachineItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Current feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCurrentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FiniteStateMachine_current_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FiniteStateMachine_current_feature", "_UI_FiniteStateMachine_type"),
+				 FsmPackage.Literals.FINITE_STATE_MACHINE__CURRENT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

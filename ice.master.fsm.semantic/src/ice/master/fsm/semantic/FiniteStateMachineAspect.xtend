@@ -12,7 +12,14 @@ import static extension ice.master.fsm.semantic.StateAspect.*
 @Aspect(className=FiniteStateMachine)
 class FiniteStateMachineAspect {
 	
-	private State current
+	public State current
+	
+	def private void enter(State next) {
+		_self.current = next
+		
+		if( _self.current !== null )
+			_self.current.onEnter()
+	}
 
 	@Step
 	def public void on(String event) {
@@ -23,31 +30,24 @@ class FiniteStateMachineAspect {
 
 		if (next !== null) {
 			_self.current.onExit()
-			_self.current(next)
-			_self.current.onEnter()
+			_self.enter(next)
 		}
 	}
 	
 	@Main
 	def public void main() {
-		_self.current = _self.initial
+		_self.enter(_self.initial)
 		
 		val cli = new Scanner(System.in)
 		var String event
 		
 		var stopped = false
 		
-//		println("Event ? ")
-//		print("> ")
-		
 		while ((! stopped) && ((event = cli.nextLine) !== null)) {
 			if( event == "exit()" )
 				stopped = true
 			else
 				_self.on(event)
-				
-//			println("Event ? ")
-//			print("> ")
 		}
 	}
 	
