@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ice.master.fsm.melange.fsm/src/" modelPluginID="ice.master.fsm.melange.fsm" modelName="FSM" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/ice.master.fsm.melange.fsm/model/FSM.ecore</foreignModel>
+  <genPackages prefix="Fsm" basePackage="ice.master.fsm.melange.fsm" disposableProviderFactory="true" fileExtensions="fsm">
+    <ecorePackage href="FSM.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="FSM.ecore#//FiniteStateMachine"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/states"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/initial"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSM.ecore#//FiniteStateMachine/name"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//FiniteStateMachine/on"/>
+        <genParameters>
+          <ecoreParameter href="FSM.ecore#//FiniteStateMachine/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//FiniteStateMachine/main"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FSM.ecore#//State"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSM.ecore#//State/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//State/outgoings"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//State/on"/>
+        <genParameters>
+          <ecoreParameter href="FSM.ecore#//State/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//State/onEnter"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//State/onExit"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FSM.ecore#//Transition"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSM.ecore#//Transition/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSM.ecore#//Transition/trigger"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//Transition/accepts"/>
+        <genParameters>
+          <ecoreParameter href="FSM.ecore#//Transition/accepts/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//Transition/on"/>
+        <genParameters>
+          <ecoreParameter href="FSM.ecore#//Transition/on/event"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
