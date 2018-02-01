@@ -4,10 +4,6 @@
     <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ice.master.fsm.melange.FSM" xdsmlFilePath="/ice.master.fsm.melange/src/ice/master/fsm/melange/FiniteStateMachine.melange"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated SimpleFSMMT -->
-    <package class="ice.master.fsm.melange.simplefsmmt.fsm.FsmPackage" genModel="model-gen/SimpleFSMMT.genmodel" uri="http://ice.master.fsm.melange.simplefsmmt/fsm/"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated FSMMT -->
     <package class="ice.master.fsm.melange.fsmmt.fsm.FsmPackage" genModel="model-gen/FSMMT.genmodel" uri="http://ice.master.fsm.melange.fsmmt/fsm/"/>
   </extension>

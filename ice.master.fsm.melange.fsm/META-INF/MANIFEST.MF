@@ -20,5 +20,5 @@ Export-Package: ice.master.fsm.melange.fsm.aspects,
  ice.master.fsm.melange.fsm.fsm,
  ice.master.fsm.melange.fsm.fsm.impl,
  ice.master.fsm.melange.fsm.fsm.util
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 
