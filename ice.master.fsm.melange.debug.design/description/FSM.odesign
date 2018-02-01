@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
   <ownedViewpoints name="FSMViewpoint">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="A diagram represing a Finite State Machine" name="FSM diagram" titleExpression="feature:name" showOnStartup="true" domainClass="fsm::FiniteStateMachine">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="a diagram representing a Finite State Machine" name="FSM" titleExpression="feature:name" showOnStartup="true" domainClass="fsm::FiniteStateMachine">
       <metamodel href="../../ice.master.fsm.melange.fsm/model/FSM.ecore#/"/>
       <defaultLayer name="Default"/>
       <additionalLayers name="Debug" activeByDefault="true">
@@ -12,7 +12,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="TransitionEdge" sourceMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM%20diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM%20diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="fsm::Transition" useDomainElement="true">
+        <edgeMappings name="TransitionEdge" sourceMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="fsm::Transition" useDomainElement="true">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
@@ -54,8 +54,18 @@
           </vsmElementCustomizations>
         </customization>
       </additionalLayers>
+      <additionalLayers name="Animation">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql: self = self.machine.current">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="ice.master.fsm.melange.debug.design.services.FsmDebugServices"/>
+    <ownedJavaExtensions qualifiedClassName="ice.master.fsm.melange.debug.design.services.FsmAnimationServices"/>
   </ownedViewpoints>
   <userColorsPalettes name="FSM Palette">
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="0" name="current instruction"/>
