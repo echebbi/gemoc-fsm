@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
   <ownedViewpoints name="FSMViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="a diagram representing a Finite State Machine" name="FSM" titleExpression="feature:name" showOnStartup="true" domainClass="fsm::FiniteStateMachine">
       <metamodel href="../../ice.master.fsm.melange.fsm/model/FSM.ecore#/"/>
       <defaultLayer name="Default"/>
       <additionalLayers name="Debug" activeByDefault="true">
-        <nodeMappings name="StateNode" semanticCandidatesExpression="feature:states" domainClass="fsm::State">
+        <nodeMappings name="State" semanticCandidatesExpression="feature:states" domainClass="fsm::State">
           <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="TransitionEdge" sourceMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="fsm::Transition" useDomainElement="true">
+        <edgeMappings name="Transition" sourceMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']" targetMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="fsm::Transition" useDomainElement="true">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
@@ -42,9 +42,22 @@
             </menuItemDescription>
           </ownedTools>
         </toolSections>
+        <toolSections name="Build">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="Create State" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="fsm::State" referenceName="states">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql: 'newState' + container.states->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" preconditionExpression="service:self.hasEnabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_enabled.gif"/>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" preconditionExpression="service:self.hasDisabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_disabled.gif"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" preconditionExpression="service:self.hasEnabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_enabled.gif" mappings="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" preconditionExpression="service:self.hasDisabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_disabled.gif" mappings="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']"/>
         </decorationDescriptionsSet>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.isCurrentInstruction">
@@ -57,7 +70,7 @@
       <additionalLayers name="Animation">
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql: self = self.machine.current">
-            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='StateNode']/@style" referenceName="color">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']/@style" referenceName="color">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
             </featureCustomizations>
           </vsmElementCustomizations>
