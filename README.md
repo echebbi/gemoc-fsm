@@ -11,7 +11,8 @@ More specifically, the goal is to create a graphical editor based on [Sirius](ht
 - [x] ECore meta-model
 - [x] Step-by-step CLI execution
 - [x] Diagram viewpoint
-- [ ] Diagram editor
+- [x] Diagram editor
+- [x] Tailored Properties view
 - [x] Step-by-step UI execution
 
 ## Implementation
