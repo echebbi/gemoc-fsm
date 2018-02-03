@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
   <ownedViewpoints name="FSMViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="a diagram representing a Finite State Machine" name="FSM" titleExpression="feature:name" showOnStartup="true" domainClass="fsm::FiniteStateMachine">
       <metamodel href="../../ice.master.fsm.melange.fsm/model/FSM.ecore#/"/>
@@ -15,7 +15,7 @@
         <edgeMappings name="Transition" sourceMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']" targetMapping="//@ownedViewpoints[name='FSMViewpoint']/@ownedRepresentations[name='FSM']/@additionalLayers[name='Debug']/@nodeMappings[name='State']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="fsm::Transition" useDomainElement="true">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql: self.name + ' \n[' + self.trigger + ']'">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -95,4 +95,77 @@
   <userColorsPalettes name="FSM Palette">
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="0" name="current instruction"/>
   </userColorsPalettes>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
+    <metamodels href="../../ice.master.fsm.melange.fsm/model/FSM.ecore#/"/>
+    <categories name="State Category">
+      <pages name="State Main" labelExpression="Main" domainClass="fsm::State" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1"/>
+      <groups name="State Properties" labelExpression="Properties" domainClass="fsm::State" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="fsm::State name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+          </initialOperation>
+        </controls>
+        <style toggleStyle="NONE" expandedByDefault="true"/>
+      </groups>
+      <groups name="State Transitions" labelExpression="Transitions" domainClass="fsm::State" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:ListDescription" name="State Transitions" labelExpression="Accessible States:" helpExpression="The states that are directly accessible" valueExpression="aql: self.outgoings" displayExpression="aql: value.target.name + ' (on ' + value.trigger + ')'">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
+        </controls>
+        <style toggleStyle="NONE" expandedByDefault="true"/>
+      </groups>
+    </categories>
+    <categories name="Transition Category">
+      <pages name="Transition Main" labelExpression="Main" domainClass="fsm::Transition" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.0"/>
+      <groups name="Transition Properties" labelExpression="Properties" domainClass="fsm::Transition" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="Transition Name" labelExpression="Name:" helpExpression="The name of the Transition. Should be unique." valueExpression="feature:name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="Transition Trigger" labelExpression="Trigger:" helpExpression="The event that triggers the transition." valueExpression="feature:trigger">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:SelectDescription" name="Transition Target" labelExpression="Target:" helpExpression="Becomes the new current state of the FSM at the end of the transition" valueExpression="aql: self.target" candidatesExpression="aql: self.source.machine.states->excluding(self.source)" candidateDisplayExpression="aql: candidate.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql: newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <style toggleStyle="NONE" expandedByDefault="true"/>
+      </groups>
+    </categories>
+    <categories name="FiniteStateMachine Category">
+      <pages name="FiniteStateMachine Main" labelExpression="Main" domainClass="fsm::FiniteStateMachine" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.2/@groups.0 //@extensions.0/@categories.2/@groups.1"/>
+      <groups name="FiniteStateMachine Properties" labelExpression="Properties" domainClass="fsm::FiniteStateMachine" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="FiniteStateMachine Name" labelExpression="Name:" helpExpression="The name of the FSM." valueExpression="feature:name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql: newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:SelectDescription" name="FiniteStateMachine Initial" labelExpression="Initial State:" helpExpression="The state of the FSM when it is started" valueExpression="aql: self.initial" candidatesExpression="aql: self.states" candidateDisplayExpression="aql: candidate.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="initial" valueExpression="aql: newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <style toggleStyle="NONE" expandedByDefault="true"/>
+      </groups>
+      <groups name="FiniteStateMachine Metadata" labelExpression="Metadata" domainClass="fsm::FiniteStateMachine" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:LabelDescription" name="FiniteStateMachine Number of States" labelExpression="Number of States:" isEnabledExpression="aql: false" valueExpression="aql: self.states->size()"/>
+        <style toggleStyle="NONE" expandedByDefault="true"/>
+      </groups>
+    </categories>
+  </extensions>
 </description:Group>
