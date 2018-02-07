@@ -79,7 +79,7 @@ Now that the structure of the meta-model and the methods that specify its behavi
 
 and that generates a **new meta-model** that can be seen as the addition of the original meta-model and of the aspects. Indeed, the generated meta-model owns all the classes and parameters declared in the original meta-model as well as the the methods and the attributes specified by the aspects.
 
-Here, the project that defines the Melange is `ice.master.fsm.melange`, and the projects it generates are `ice.master.fsm.melange.fsm.*`.
+Here, the project that defines the Melange is `ice.master.fsm.xdsml`, and the projects it generates are `ice.master.fsm.xdsml.fsm.*`.
 
 #### Create a new Melange project
 
@@ -156,7 +156,7 @@ A graphical editor can be defined with Sirius. To this end, go back to the first
 2. Select `GEMOC Language`
 3. Click on `Generate Animatior Project for language`
 
-A new `<melange-project-name>.debug.design` project should be created. Here, it is `ice.master.fsm.melange.debug.design`.
+A new `<melange-project-name>.debug.design` project should be created. Here, it is `ice.master.fsm.design`.
 
 This project contains a file `description/<language-name>.odesign` that can be edited to configure the graphical editor. See [Sirius Guide](https://wiki.eclipse.org/Sirius/Tutorials/StarterTutorial) for further details. A [GEMOC tutorial](http://gemoc.org/gemoc-studio/publish/tutorial_markedgraph/html/ch06.html) also shows how to set up an animation. 
 
