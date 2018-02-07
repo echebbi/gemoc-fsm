@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://ice.master.fsm.model/model" nsPrefix="model">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractState" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="//FiniteStateMachine" eOpposite="//FiniteStateMachine/states"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoings" upperBound="-1" eType="//Transition" containment="true" eOpposite="//Transition/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//AbstractState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FiniteStateMachine" eSuperTypes="//AbstractState">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="//AbstractState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1" eType="//AbstractState" containment="true" eOpposite="//AbstractState/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//AbstractState" eOpposite="//AbstractState/outgoings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//AbstractState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

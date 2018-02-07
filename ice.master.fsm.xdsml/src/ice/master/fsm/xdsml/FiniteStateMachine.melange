@@ -1,0 +1,14 @@
+package ice.master.fsm.xdsml
+
+language FSM {
+	// Melange generates an extended ecore in a language runtime project (ice.master.fsm.xdsml.fSM) 
+	// that copies everything needed for the  execution (abstract syntax and aspects), 	
+	// in the SingleLanguage approach, the editor and animator must be written using this generated ecore and not the original one.
+ syntax "platform:/resource/ice.master.fsm.model/model/model.ecore"
+	
+	with ice.master.fsm.semantic.FiniteStateMachineAspect
+	with ice.master.fsm.semantic.TransitionAspect
+	with ice.master.fsm.semantic.StateAspect
+    with ice.master.fsm.semantic.AbstractStateAspect
+
+}

@@ -1,8 +1,8 @@
 package ice.master.fsm.semantic
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import ice.master.fsm.model.fsm.State
-import ice.master.fsm.model.fsm.Transition
+import ice.master.fsm.model.AbstractState
+import ice.master.fsm.model.Transition
 
 @Aspect(className=Transition)
 class TransitionAspect {
@@ -13,7 +13,7 @@ class TransitionAspect {
 	}
 
 //	@Step
-	def public State on(String event) {
+	def public AbstractState on(String event) {
 		return if(_self.accepts(event)) _self.target else null
 	}
 	

@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: ice.master.fsm.xdsml; singleton:=true
+Export-Package: ice.master.fsm.xdsml.fsmmt.model.impl,
+ ice.master.fsm.xdsml.fsmmt.model,
+ ice.master.fsm.xdsml.fsmmt.model.util,
+ ice.master.fsm.xdsml.fsm.adapters.fsmmt,
+ ice.master.fsm.xdsml,
+ ice.master.fsm.xdsml.fsm.adapters.fsmmt.model
+Bundle-Name: ice.master.fsm.xdsml
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="private",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.7.0";visibility:="private",
+ com.google.guava;bundle-version="0.0.0";visibility:="private",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.8.0";visibility:="reexport",
+ org.eclipse.emf.ecore;bundle-version="2.8.0";visibility:="reexport",
+ org.eclipse.emf.common;bundle-version="2.8.0";visibility:="reexport",
+ fr.inria.diverse.melange;bundle-version="0.1.0";visibility:="reexport",
+ fr.inria.diverse.melange.lib;bundle-version="0.1.0";visibility:="reexport",
+ fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:="reexport",
+ fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:="reexport",
+ fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:="reexport",
+ org.eclipse.gemoc.xdsmlframework.api;bundle-version="0.0.0";visibility:="reexport",
+ org.eclipse.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0";visibility:="reexport",
+ org.eclipse.gemoc.executionframework.engine;bundle-version="0.0.0";visibility:="reexport",
+ ice.master.fsm.semantic;bundle-version="0.0.0";visibility:="private",
+ ice.master.fsm.model;bundle-version="0.0.0";visibility:="private",
+ org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ ice.master.fsm.xdsml.fsm
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+

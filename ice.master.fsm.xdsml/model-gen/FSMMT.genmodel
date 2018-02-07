@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ice.master.fsm.xdsml/src-gen" modelPluginID="ice.master.fsm.xdsml" modelName="FSMMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/ice.master.fsm.xdsml/model-gen/FSMMT.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="ice.master.fsm.xdsml.fsmmt" disposableProviderFactory="true">
+    <ecorePackage href="FSMMT.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="FSMMT.ecore#//AbstractState"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSMMT.ecore#//AbstractState/name"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//AbstractState/parent"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//AbstractState/outgoings"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//AbstractState/on"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//AbstractState/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//AbstractState/onEnter"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//AbstractState/onExit"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FSMMT.ecore#//State"/>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//State/on"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//State/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//State/onEnter"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//State/onExit"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FSMMT.ecore#//FiniteStateMachine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//FiniteStateMachine/initial"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//FiniteStateMachine/states"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//FiniteStateMachine/current"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//FiniteStateMachine/on"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//FiniteStateMachine/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//FiniteStateMachine/main"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FSMMT.ecore#//Transition"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//Transition/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSMMT.ecore#//Transition/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FSMMT.ecore#//Transition/trigger"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//Transition/accepts"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//Transition/accepts/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//Transition/on"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//Transition/on/event"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

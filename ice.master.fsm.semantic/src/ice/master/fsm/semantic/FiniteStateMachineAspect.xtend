@@ -3,8 +3,9 @@ package ice.master.fsm.semantic
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.Main
 import fr.inria.diverse.k3.al.annotationprocessor.Step
-import ice.master.fsm.model.fsm.FiniteStateMachine
-import ice.master.fsm.model.fsm.State
+import ice.master.fsm.model.AbstractState
+import ice.master.fsm.model.State
+import ice.master.fsm.model.FiniteStateMachine
 import java.util.Scanner
 
 import static extension ice.master.fsm.semantic.StateAspect.*
@@ -14,24 +15,26 @@ class FiniteStateMachineAspect {
 	
 	public State current
 	
-	def private void enter(State next) {
-		_self.current = next
+	def private void enter(AbstractState next) {
+		_self.current = next as State
 		
 		if( _self.current !== null )
 			_self.current.onEnter()
 	}
 
 	@Step
-	def public void on(String event) {
+	def public AbstractState on(String event) {
 		if (_self.current === null)
-			return;
+			return null;
 			
-		var State next = _self.current.on(event)
+		var AbstractState next = _self.current.on(event)
 
 		if (next !== null) {
 			_self.current.onExit()
 			_self.enter(next)
 		}
+		
+		return _self.current
 	}
 	
 	@Main

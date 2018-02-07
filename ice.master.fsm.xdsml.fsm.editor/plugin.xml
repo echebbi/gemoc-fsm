@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated FSM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ice.master.fsm.xdsml.fsm.model.presentation.ModelModelWizardID"
+            name="%_UI_ModelModelWizard_label"
+            class="ice.master.fsm.xdsml.fsm.model.presentation.ModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelModelFile.gif">
+         <description>%_UI_ModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated FSM -->
+      <editor
+            id="ice.master.fsm.xdsml.fsm.model.presentation.ModelEditorID"
+            name="%_UI_ModelEditor_label"
+            icon="icons/full/obj16/ModelModelFile.gif"
+            extensions="fsm"
+            class="ice.master.fsm.xdsml.fsm.model.presentation.ModelEditor"
+            contributorClass="ice.master.fsm.xdsml.fsm.model.presentation.ModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

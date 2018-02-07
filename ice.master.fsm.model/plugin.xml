@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated fsm -->
+      <!-- @generated model -->
       <package
-            uri="http://www.example.org/fsm"
-            class="ice.master.fsm.model.fsm.FsmPackage"
-            genModel="model/fsm.genmodel"/>
+            uri="http://ice.master.fsm.model/model"
+            class="ice.master.fsm.model.ModelPackage"
+            genModel="model/model.genmodel"/>
    </extension>
 
 </plugin>

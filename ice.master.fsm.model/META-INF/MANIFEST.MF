@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ice.master.fsm.model.fsm,
- ice.master.fsm.model.fsm.impl,
- ice.master.fsm.model.fsm.util
+Export-Package: ice.master.fsm.model,
+ ice.master.fsm.model.impl,
+ ice.master.fsm.model.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
