@@ -66,7 +66,7 @@
             </menuItemDescription>
           </ownedTools>
         </toolSections>
-        <toolSections name="Build">
+        <toolSections name="Edit">
           <ownedTools xsi:type="tool_1:NodeCreationDescription" name="Create State" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -90,8 +90,19 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Create Nested State Machine" label="Create Nested FSM" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@containerMappings[name='Nested%20State%20Machine']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="model::FiniteStateMachine" referenceName="states">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql: 'newNestedFSM' + container.states->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
-        <toolSections name="Edition">
+        <toolSections name="Edit Tools">
           <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Double Click on Nested FSM" mappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@containerMappings[name='Nested%20State%20Machine']">
             <element name="element"/>
             <elementView name="elementView"/>
