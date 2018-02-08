@@ -20,7 +20,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Nested State Machine" semanticCandidatesExpression="feature:states" domainClass="model::FiniteStateMachine">
+        <containerMappings name="Nested State Machine" semanticCandidatesExpression="feature:states" doubleClickDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Double%20Click%20on%20Nested%20FSM']" domainClass="model::FiniteStateMachine">
           <subNodeMappings name="Nested State" semanticCandidatesExpression="feature:eAllContents" domainClass="model::State">
             <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" width="8">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -79,6 +79,15 @@
                 <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="OnEvent"/>
                 <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:target"/>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Selection">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Double Click on Nested FSM" mappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@containerMappings[name='Nested%20State%20Machine']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
