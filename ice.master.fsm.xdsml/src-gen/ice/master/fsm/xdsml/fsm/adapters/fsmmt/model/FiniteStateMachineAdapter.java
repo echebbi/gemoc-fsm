@@ -4,7 +4,6 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import ice.master.fsm.xdsml.fsm.adapters.fsmmt.FSMMTAdaptersFactory;
 import ice.master.fsm.xdsml.fsm.model.FiniteStateMachine;
 import ice.master.fsm.xdsml.fsmmt.model.AbstractState;
-import ice.master.fsm.xdsml.fsmmt.model.State;
 import ice.master.fsm.xdsml.fsmmt.model.Transition;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
@@ -72,13 +71,19 @@ public class FiniteStateMachineAdapter extends EObjectAdapter<FiniteStateMachine
   }
   
   @Override
-  public State getCurrent() {
-    return (State) adaptersFactory.createAdapter(ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.current(adaptee), eResource);
+  public AbstractState getCurrent() {
+    return (AbstractState) adaptersFactory.createAdapter(ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.current(adaptee), eResource);
   }
   
   @Override
-  public void setCurrent(final State current) {
-    ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.current(adaptee, (ice.master.fsm.xdsml.fsm.model.State)((EObjectAdapter)current).getAdaptee()
+  public void setCurrent(final AbstractState current) {
+    ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.current(adaptee, (ice.master.fsm.xdsml.fsm.model.AbstractState)((EObjectAdapter)current).getAdaptee()
+    );
+  }
+  
+  @Override
+  public void enterInitialState(final org.eclipse.emf.common.util.EList<java.lang.String> args) {
+    ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.enterInitialState(adaptee, args
     );
   }
   
@@ -95,7 +100,7 @@ public class FiniteStateMachineAdapter extends EObjectAdapter<FiniteStateMachine
   
   @Override
   public void onEnter() {
-    ice.master.fsm.xdsml.fsm.aspects.AbstractStateAspect.onEnter(adaptee);
+    ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.onEnter(adaptee);
   }
   
   @Override
@@ -178,7 +183,7 @@ public class FiniteStateMachineAdapter extends EObjectAdapter<FiniteStateMachine
     		return;
     	case ice.master.fsm.xdsml.fsmmt.model.ModelPackage.FINITE_STATE_MACHINE__CURRENT:
     		setCurrent(
-    		(ice.master.fsm.xdsml.fsmmt.model.State)
+    		(ice.master.fsm.xdsml.fsmmt.model.AbstractState)
     		 newValue);
     		return;
     }

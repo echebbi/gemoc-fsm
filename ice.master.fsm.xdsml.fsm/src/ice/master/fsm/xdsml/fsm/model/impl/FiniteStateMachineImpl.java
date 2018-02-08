@@ -5,7 +5,6 @@ package ice.master.fsm.xdsml.fsm.model.impl;
 import ice.master.fsm.xdsml.fsm.model.AbstractState;
 import ice.master.fsm.xdsml.fsm.model.FiniteStateMachine;
 import ice.master.fsm.xdsml.fsm.model.ModelPackage;
-import ice.master.fsm.xdsml.fsm.model.State;
 
 import java.util.Collection;
 
@@ -66,7 +65,7 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 	 * @generated
 	 * @ordered
 	 */
-	protected State current;
+	protected AbstractState current;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,10 +141,10 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getCurrent() {
+	public AbstractState getCurrent() {
 		if (current != null && current.eIsProxy()) {
 			InternalEObject oldCurrent = (InternalEObject)current;
-			current = (State)eResolveProxy(oldCurrent);
+			current = (AbstractState)eResolveProxy(oldCurrent);
 			if (current != oldCurrent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.FINITE_STATE_MACHINE__CURRENT, oldCurrent, current));
@@ -159,7 +158,7 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetCurrent() {
+	public AbstractState basicGetCurrent() {
 		return current;
 	}
 
@@ -168,11 +167,22 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrent(State newCurrent) {
-		State oldCurrent = current;
+	public void setCurrent(AbstractState newCurrent) {
+		AbstractState oldCurrent = current;
 		current = newCurrent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FINITE_STATE_MACHINE__CURRENT, oldCurrent, current));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void enterInitialState(EList<String> args) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -252,7 +262,7 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 				getStates().addAll((Collection<? extends AbstractState>)newValue);
 				return;
 			case ModelPackage.FINITE_STATE_MACHINE__CURRENT:
-				setCurrent((State)newValue);
+				setCurrent((AbstractState)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -273,7 +283,7 @@ public class FiniteStateMachineImpl extends AbstractStateImpl implements FiniteS
 				getStates().clear();
 				return;
 			case ModelPackage.FINITE_STATE_MACHINE__CURRENT:
-				setCurrent((State)null);
+				setCurrent((AbstractState)null);
 				return;
 		}
 		super.eUnset(featureID);

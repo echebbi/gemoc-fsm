@@ -336,9 +336,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(stateEClass, this.getAbstractState(), "on", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "event", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(stateEClass, null, "onEnter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(stateEClass, null, "onExit", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -346,10 +343,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(finiteStateMachineEClass, FiniteStateMachine.class, "FiniteStateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFiniteStateMachine_Initial(), this.getAbstractState(), null, "initial", null, 0, 1, FiniteStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFiniteStateMachine_States(), this.getAbstractState(), this.getAbstractState_Parent(), "states", null, 0, -1, FiniteStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFiniteStateMachine_Current(), this.getState(), null, "current", null, 0, 1, FiniteStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFiniteStateMachine_Current(), this.getAbstractState(), null, "current", null, 0, 1, FiniteStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(finiteStateMachineEClass, null, "onEnter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(finiteStateMachineEClass, this.getAbstractState(), "on", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "event", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(finiteStateMachineEClass, null, "enterInitialState", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "args", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(finiteStateMachineEClass, null, "main", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -407,17 +409,22 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (stateEClass.getEOperations().get(2), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (finiteStateMachineEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (finiteStateMachineEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (finiteStateMachineEClass.getEOperations().get(2), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (finiteStateMachineEClass.getEOperations().get(3), 
 		   source, 
 		   new String[] {
 		   });	

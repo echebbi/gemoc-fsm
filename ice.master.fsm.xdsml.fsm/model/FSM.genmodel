@@ -30,12 +30,6 @@
     <genClasses>
       <ecoreClass href="FSM.ecore#//State"/>
       <genOperations>
-        <ecoreOperation href="FSM.ecore#//State/on"/>
-        <genParameters>
-          <ecoreParameter href="FSM.ecore#//State/on/event"/>
-        </genParameters>
-      </genOperations>
-      <genOperations>
         <ecoreOperation href="FSM.ecore#//State/onEnter"/>
       </genOperations>
       <genOperations>
@@ -54,9 +48,18 @@
         <ecoreFeature xsi:type="ecore:EReference" href="FSM.ecore#//FiniteStateMachine/current"/>
       </genFeatures>
       <genOperations>
+        <ecoreOperation href="FSM.ecore#//FiniteStateMachine/onEnter"/>
+      </genOperations>
+      <genOperations>
         <ecoreOperation href="FSM.ecore#//FiniteStateMachine/on"/>
         <genParameters>
           <ecoreParameter href="FSM.ecore#//FiniteStateMachine/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSM.ecore#//FiniteStateMachine/enterInitialState"/>
+        <genParameters>
+          <ecoreParameter href="FSM.ecore#//FiniteStateMachine/enterInitialState/args"/>
         </genParameters>
       </genOperations>
       <genOperations>

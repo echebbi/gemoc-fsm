@@ -51,12 +51,6 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
   }
   
   @Override
-  public AbstractState on(final String event) {
-    return (AbstractState) adaptersFactory.createAdapter(ice.master.fsm.xdsml.fsm.aspects.StateAspect.on(adaptee, event
-    ), eResource);
-  }
-  
-  @Override
   public void onEnter() {
     ice.master.fsm.xdsml.fsm.aspects.StateAspect.onEnter(adaptee);
   }
@@ -64,6 +58,12 @@ public class StateAdapter extends EObjectAdapter<State> implements ice.master.fs
   @Override
   public void onExit() {
     ice.master.fsm.xdsml.fsm.aspects.StateAspect.onExit(adaptee);
+  }
+  
+  @Override
+  public AbstractState on(final String event) {
+    return (AbstractState) adaptersFactory.createAdapter(ice.master.fsm.xdsml.fsm.aspects.AbstractStateAspect.on(adaptee, event
+    ), eResource);
   }
   
   protected final static String NAME_EDEFAULT = null;

@@ -30,12 +30,6 @@
     <genClasses>
       <ecoreClass href="FSMMT.ecore#//State"/>
       <genOperations>
-        <ecoreOperation href="FSMMT.ecore#//State/on"/>
-        <genParameters>
-          <ecoreParameter href="FSMMT.ecore#//State/on/event"/>
-        </genParameters>
-      </genOperations>
-      <genOperations>
         <ecoreOperation href="FSMMT.ecore#//State/onEnter"/>
       </genOperations>
       <genOperations>
@@ -54,9 +48,18 @@
         <ecoreFeature xsi:type="ecore:EReference" href="FSMMT.ecore#//FiniteStateMachine/current"/>
       </genFeatures>
       <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//FiniteStateMachine/onEnter"/>
+      </genOperations>
+      <genOperations>
         <ecoreOperation href="FSMMT.ecore#//FiniteStateMachine/on"/>
         <genParameters>
           <ecoreParameter href="FSMMT.ecore#//FiniteStateMachine/on/event"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="FSMMT.ecore#//FiniteStateMachine/enterInitialState"/>
+        <genParameters>
+          <ecoreParameter href="FSMMT.ecore#//FiniteStateMachine/enterInitialState/args"/>
         </genParameters>
       </genOperations>
       <genOperations>

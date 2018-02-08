@@ -20,14 +20,6 @@ public interface State extends AbstractState {
 	 * @model
 	 * @generated
 	 */
-	AbstractState on(String event);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void onEnter();
 
 	/**

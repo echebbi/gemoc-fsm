@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.4"?><plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
   <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ice.master.fsm.xdsml.FSM" xdsmlFilePath="/ice.master.fsm.xdsml/bin/ice/master/fsm/xdsml/FiniteStateMachine.melange"/>
+    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ice.master.fsm.xdsml.FSM" xdsmlFilePath="/ice.master.fsm.xdsml/bin/ice/master/fsm/xdsml/FiniteStateMachine.melange" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated FSMMT -->
-    <package class="ice.master.fsm.xdsml.fsmmt.model.ModelPackage" genModel="model-gen/FSMMT.genmodel" uri="http://ice.master.fsm.xdsml.fsmmt/model/"/>
+    <package class="ice.master.fsm.xdsml.fsmmt.model.ModelPackage" genModel="model-gen/FSMMT.genmodel" uri="http://ice.master.fsm.xdsml.fsmmt/model/" />
   </extension>
-  
-<extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="ice.master.fsm.xdsml.FSMMT" uri="http://ice.master.fsm.xdsml.fsmmt/"/>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="ice.master.fsm.xdsml.FSMMT" uri="http://ice.master.fsm.xdsml.fsmmt/" />
   </extension>
   <extension point="fr.inria.diverse.melange.language">
     <language aspects="State:ice.master.fsm.xdsml.fsm.aspects.StateAspect;FiniteStateMachine:ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect;Transition:ice.master.fsm.xdsml.fsm.aspects.TransitionAspect;AbstractState:ice.master.fsm.xdsml.fsm.aspects.AbstractStateAspect" entryPoints="ice.master.fsm.xdsml.fsm.aspects.FiniteStateMachineAspect.main(ice.master.fsm.xdsml.fsm.model.FiniteStateMachine)" exactType="ice.master.fsm.xdsml.FSMMT" id="ice.master.fsm.xdsml.FSM" uri="http://ice.master.fsm.xdsml.fsm/model/">
-      <adapter class="ice.master.fsm.xdsml.fsm.adapters.fsmmt.FSMAdapter" modeltypeId="ice.master.fsm.xdsml.FSMMT"/>
+      <adapter class="ice.master.fsm.xdsml.fsm.adapters.fsmmt.FSMAdapter" modeltypeId="ice.master.fsm.xdsml.FSMMT" />
     </language>
   </extension>
 </plugin>

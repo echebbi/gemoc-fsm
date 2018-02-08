@@ -7,12 +7,10 @@ import ice.master.fsm.model.Transition
 @Aspect(className=Transition)
 class TransitionAspect {
 
-//	@Step
 	def public boolean accepts(String event) {
 		return event == _self.trigger
 	}
 
-//	@Step
 	def public AbstractState on(String event) {
 		return if(_self.accepts(event)) _self.target else null
 	}

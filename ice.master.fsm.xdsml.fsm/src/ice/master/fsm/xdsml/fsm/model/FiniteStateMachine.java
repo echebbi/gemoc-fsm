@@ -76,12 +76,12 @@ public interface FiniteStateMachine extends AbstractState {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Current</em>' reference.
-	 * @see #setCurrent(State)
+	 * @see #setCurrent(AbstractState)
 	 * @see ice.master.fsm.xdsml.fsm.model.ModelPackage#getFiniteStateMachine_Current()
 	 * @model
 	 * @generated
 	 */
-	State getCurrent();
+	AbstractState getCurrent();
 
 	/**
 	 * Sets the value of the '{@link ice.master.fsm.xdsml.fsm.model.FiniteStateMachine#getCurrent <em>Current</em>}' reference.
@@ -91,7 +91,15 @@ public interface FiniteStateMachine extends AbstractState {
 	 * @see #getCurrent()
 	 * @generated
 	 */
-	void setCurrent(State value);
+	void setCurrent(AbstractState value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void onEnter();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,6 +108,14 @@ public interface FiniteStateMachine extends AbstractState {
 	 * @generated
 	 */
 	AbstractState on(String event);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model argsMany="true"
+	 * @generated
+	 */
+	void enterInitialState(EList<String> args);
 
 	/**
 	 * <!-- begin-user-doc -->
