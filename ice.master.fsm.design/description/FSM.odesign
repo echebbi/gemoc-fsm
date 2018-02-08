@@ -153,7 +153,7 @@
         <controls xsi:type="properties:TextDescription" name="Transition Trigger" labelExpression="Trigger:" helpExpression="The event that triggers the transition." valueExpression="feature:trigger">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:newValue"/>
+              <subModelOperations xsi:type="tool:SetValue" featureName="trigger" valueExpression="aql:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
