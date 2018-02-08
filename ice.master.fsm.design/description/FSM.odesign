@@ -6,7 +6,7 @@
       <defaultLayer name="Default"/>
       <additionalLayers name="Debug" activeByDefault="true">
         <nodeMappings name="State" semanticCandidatesExpression="feature:states" domainClass="model::State">
-          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" width="8" height="8">
+          <style xsi:type="style:SquareDescription" labelSize="10" labelPosition="node" resizeKind="NSEW" width="8" height="8">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
@@ -20,15 +20,24 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Nested State Machine" semanticCandidatesExpression="feature:states" doubleClickDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Double%20Click%20on%20Nested%20FSM']" domainClass="model::FiniteStateMachine">
-          <subNodeMappings name="Nested State" semanticCandidatesExpression="feature:eAllContents" domainClass="model::State">
-            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" width="8">
+        <containerMappings name="Nested State Machine" semanticCandidatesExpression="feature:states" doubleClickDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Double%20Click%20on%20Nested%20FSM']" domainClass="model::FiniteStateMachine" childrenPresentation="HorizontalStack">
+          <subContainerMappings name="States of Nested State Machine" semanticCandidatesExpression="var:self" domainClass="model::FiniteStateMachine" childrenPresentation="List">
+            <subNodeMappings name="Nested State" semanticCandidatesExpression="feature:eAllContents" domainClass="model::State">
+              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="States">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
