@@ -8,8 +8,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
- org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:="reexport",
- org.eclipse.gemoc.execution.sequential.javaengine.ui;bundle-version=0.0.0;visibility:=reexport
+ org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ org.eclipse.gemoc.execution.sequential.javaengine.ui;bundle-version="0.0.0";visibility:=reexport,
+ ice.master.fsm.xdsml.fsm;bundle-version="0.1.0"
 Bundle-ManifestVersion: 2
 Bundle-Activator: ice.master.fsm.design.Activator
 Bundle-ActivationPolicy: lazy

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="FSM" version="12.0.0.2017041100">
   <ownedViewpoints endUserDocumentation="Provides a graphical representation to design a Finite State Machine model." name="Finite State Machine">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="A diagram representing a Finite State Machine." name="Finite State Machine in a State Diagram" titleExpression="feature:name" showOnStartup="true" domainClass="model::FiniteStateMachine">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="A diagram representing a Finite State Machine." name="Finite State Machine in a State Diagram" titleExpression="aql:self.name" showOnStartup="true" domainClass="model::FiniteStateMachine" enablePopupBars="true">
       <metamodel href="../../ice.master.fsm.xdsml.fsm/model/FSM.ecore#/"/>
       <defaultLayer name="Default"/>
       <additionalLayers name="Debug" activeByDefault="true">
@@ -78,15 +78,17 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Create Transitions" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Create Transition" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:CreateInstance" typeName="model::Transition" referenceName="outgoings">
-                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="OnEvent"/>
-                <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="aql:target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="model::Transition" referenceName="outgoings">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="OnEvent"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -150,8 +152,8 @@
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" preconditionExpression="service:self.hasEnabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_enabled.gif"/>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" preconditionExpression="service:self.hasDisabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_disabled.gif"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Enabled breakpoint" position="WEST" preconditionExpression="service:self.hasEnabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_enabled.gif" mappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@containerMappings[name='Nested%20State%20Machine'] //@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="Disabled breakpoint" position="WEST" preconditionExpression="service:self.hasDisabledBreakpoint" imageExpression="/org.eclipse.gemoc.executionframework.extensions.sirius/icons/breakpoint_disabled.gif" mappings="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State'] //@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@containerMappings[name='Nested%20State%20Machine']"/>
         </decorationDescriptionsSet>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.isCurrentInstruction">
@@ -163,7 +165,7 @@
       </additionalLayers>
       <additionalLayers name="Animation">
         <customization>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql: self = self.parent.current">
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self = self.oclAsType(model::State).parent.current">
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']/@style" referenceName="color">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
             </featureCustomizations>
@@ -171,6 +173,7 @@
         </customization>
       </additionalLayers>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="ice.master.fsm.design.Services"/>
     <ownedJavaExtensions qualifiedClassName="ice.master.fsm.design.services.FsmDebugServices"/>
     <ownedJavaExtensions qualifiedClassName="ice.master.fsm.design.services.FsmAnimationServices"/>
   </ownedViewpoints>
