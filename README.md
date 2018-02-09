@@ -117,6 +117,8 @@ The new representation should be created in the .aird file and open in the diagr
 
 You can debug a FSM with the help of a visual support by following the steps specified in [Execute the FSM](#6-execute-the-fsm). The only change is to fill the _Animator_ field with the path to the .aird file containing the FSM's representation.
 
+> Note: the FSM's current state is colored in orange only when selected from the _Multidimensional Timeline_ view. 
+
 ## Useful links
 
 The following links provide useful informations about GEMOC Studio and its use:
