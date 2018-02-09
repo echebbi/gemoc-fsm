@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:FiniteStateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://ice.master.fsm.xdsml.fsm/model/" name="Door" initial="//@states.0">
+  <states xsi:type="model:State" name="Opened">
+    <outgoings target="//@states.1" name="OnClose" trigger="close"/>
+    <outgoings target="//@states.2" name="OnBreak" trigger="break"/>
+  </states>
+  <states xsi:type="model:State" name="Closed">
+    <outgoings target="//@states.0" name="OnOpen" trigger="open"/>
+    <outgoings target="//@states.2" name="OnBreak" trigger="break"/>
+  </states>
+  <states xsi:type="model:State" name="Broken">
+    <outgoings target="//@states.1" name="OnRepair" trigger="repair"/>
+    <outgoings name="OnBurn" trigger="burn"/>
+  </states>
+</model:FiniteStateMachine>

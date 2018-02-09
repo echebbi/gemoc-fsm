@@ -36,6 +36,15 @@ The different projects present in this repository are:
 - `ice.master.fsm.xdsml.*`: defines the xDSML used by GEMOC's Model Animator ;
 - `ice.master.fsm.design`: defines the Sirius Representation of a FSM.
 
+## Samples
+
+The [samples](samples) folder contains examples of projects defining a FSM:
+
+- `ice.master.fsm.sample.door`: represents a door owning three states (Opened, Closed, Broken) ;
+- `ice.master.fsm.sample.device`: represents a simple device owning a state (Off) and a nested FSM (On).
+
+Import these projects in your workspace to test them.
+
 ## Use this project
 
 ### Table of Contents
