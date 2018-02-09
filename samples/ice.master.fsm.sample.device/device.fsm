@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model:FiniteStateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://ice.master.fsm.xdsml.fsm/model/" name="Device">
+<model:FiniteStateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://ice.master.fsm.xdsml.fsm/model/" name="Device" initial="//@states.0">
   <states xsi:type="model:State" name="Off">
     <outgoings target="//@states.1" name="OnStart" trigger="start"/>
   </states>
-  <states xsi:type="model:FiniteStateMachine" name="On">
+  <states xsi:type="model:FiniteStateMachine" name="On" initial="//@states.1/@states.0">
     <outgoings target="//@states.0" name="OnStop" trigger="stop"/>
     <states xsi:type="model:State" name="PollingEvent">
       <outgoings target="//@states.1/@states.1" name="OnKey" trigger="key"/>

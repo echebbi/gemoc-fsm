@@ -20,9 +20,9 @@
           <children xmi:type="notation:Node" xmi:id="_GaIZIw3cEeiGW8hOb-dBsg" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_GaIZJA3cEeiGW8hOb-dBsg" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_GaK1YA3cEeiGW8hOb-dBsg" type="3003" element="_GZxMxQ3cEeiGW8hOb-dBsg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_GaK1YQ3cEeiGW8hOb-dBsg" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaK1Yg3cEeiGW8hOb-dBsg"/>
+          <children xmi:type="notation:Node" xmi:id="_RvJLwA3rEeiWad8ZloEPeQ" type="3003" element="_RuVTcA3rEeiWad8ZloEPeQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_RvJLwQ3rEeiWad8ZloEPeQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RvJLwg3rEeiWad8ZloEPeQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_GaIZIQ3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="10"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaIZIg3cEeiGW8hOb-dBsg" x="30" y="280" width="80" height="80"/>
@@ -138,8 +138,8 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_GZxMxQ3cEeiGW8hOb-dBsg" labelSize="10" labelPosition="node" width="8" height="8" color="194,239,255">
-        <description xmi:type="style:SquareDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']/@style"/>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_RuVTcA3rEeiWad8ZloEPeQ" labelSize="10" labelPosition="node" width="8" height="8" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@nodeMappings[name='State']"/>
     </ownedDiagramElements>
