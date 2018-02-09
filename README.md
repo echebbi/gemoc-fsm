@@ -47,12 +47,14 @@ The different projects present in this repository are:
 * [5. Create a new FSM](#5-create-a-new-fsm)
 * [6. Execute the FSM](#6-execute-the-fsm)
 * [7. Debug the FSM](#7-debug-the-fsm)
+* [8. Create a representation of the FSM](#8-create-a-representation-of-the-fsm)
+* [9. Debug the representation of the FSM](#9-debug-the-representation-of-the-fsm)
 
 ### 1. Choose the right GEMOC Studio 
 
 At the time of writing, the latest version of GEMOC Studio is the `3.0.0-SNAPSHOT`. Since it is a SNAPSHOT, the product evolves over time and some versions are more stables than overs.
 
-The different versions are build by Jenkins, and I found out the [build #33](https://ci.eclipse.org/gemoc/job/gemoc-studio/job/master/33/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.product/target/products/) to be pretty stable. Since [Melange](http://gemoc.org/gemoc-studio/publish/guide/html_single/Guide.html#section-melange-editor) is not currently really trustworthy I strongly advise you to use this version of GEMOC. 
+The different versions are built by Jenkins, and I found out the [build #33](https://ci.eclipse.org/gemoc/job/gemoc-studio/job/master/33/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.product/target/products/) to be pretty stable. Since [Melange](http://gemoc.org/gemoc-studio/publish/guide/html_single/Guide.html#section-melange-editor) is not currently really trustworthy I strongly advise you to use this version of GEMOC. 
 
 ### 2. Clone the repository
 
@@ -122,4 +124,4 @@ The following links provide useful informations about GEMOC Studio and its use:
 - [A complete guide about GEMOC](http://gemoc.org/gemoc-studio/publish/guide/html/Guide.html)
 - [GEMOC's Guide Quick Tutorial](https://github.com/gemoc/gemoc-studio/wiki/GuideQuickTutorial)
 - [A tutorial about how to create an executable Marked Graph](http://gemoc.org/gemoc-studio/publish/tutorial_markedgraph/html_single/GuideTutorialMarkedGraph.html#_set_up_an_xdsml_project)
-- [Kermeta 3's user documentation](http://diverse-project.github.io/k3/publish/user_documentation/html_single/user_documentation.html)
+
