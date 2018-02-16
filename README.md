@@ -6,7 +6,7 @@ This project is aimed to experiment with [GEMOC Studio](http://gemoc.org/studio.
 
 More specifically, the goal is to create a graphical editor based on [Sirius](https://www.eclipse.org/sirius/) that makes able to edit a Finite State Machine (FSM). Futhermore, it must be possible to simulate a FSM's execution thanks to GEMOC's Model Animator.
 
-![Screenshot of a Door FSM](https://github.com/KazeJiyu/kazejiyu.github.io/blob/master/repos/gemoc-fsm/door.jpg)
+![Screenshot of a Door FSM](https://github.com/KazeJiyu/fr.kazejiyu.io/blob/master/repos/gemoc-fsm/door.jpg)
 
 ## Implemented features
 
