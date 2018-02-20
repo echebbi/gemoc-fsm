@@ -27,7 +27,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Nested State Machine" labelDirectEdit="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Edit%20State%20Label']" semanticCandidatesExpression="feature:states" doubleClickDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Double%20Click%20on%20Nested%20FSM']" domainClass="model::FiniteStateMachine" childrenPresentation="HorizontalStack">
+        <containerMappings name="Nested State Machine" deletionDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Delete%20Nested%20State%20Machine']" labelDirectEdit="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Edit%20State%20Label']" semanticCandidatesExpression="feature:states" doubleClickDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Double%20Click%20on%20Nested%20FSM']" domainClass="model::FiniteStateMachine" childrenPresentation="HorizontalStack">
           <subContainerMappings name="States of Nested State Machine" semanticCandidatesExpression="var:self" domainClass="model::FiniteStateMachine" childrenPresentation="List">
             <subNodeMappings name="Nested State" semanticCandidatesExpression="feature:eAllContents" domainClass="model::State">
               <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" width="10" height="5">
@@ -156,6 +156,18 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="Delete Nested State Machine">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteRepresentations()">
+                  <subModelOperations xsi:type="tool:RemoveElement"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
