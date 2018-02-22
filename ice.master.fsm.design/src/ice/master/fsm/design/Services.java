@@ -1,7 +1,7 @@
 package ice.master.fsm.design;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Objects;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
@@ -12,6 +12,10 @@ import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+
+import ice.master.fsm.xdsml.fsm.model.AbstractState;
+import ice.master.fsm.xdsml.fsm.model.FiniteStateMachine;
+import ice.master.fsm.xdsml.fsm.model.Transition;
 
 /**
  * The services class used by VSM.
@@ -64,6 +68,26 @@ public class Services {
     			continue;
     		
     		DialectManager.INSTANCE.deleteRepresentation(descriptor, session);
+		}
+	}
+	
+	public void deleteIncomingTransitions(EObject eObject) {
+		if( eObject instanceof AbstractState ) {
+			AbstractState state = (AbstractState) eObject;
+			
+			FiniteStateMachine fsm = state.getParent();
+			
+			if( fsm == null )
+				return;
+			
+			for( AbstractState sibling : fsm.getStates() ) {
+				for (Iterator<Transition> iterator = sibling.getOutgoings().iterator() ; iterator.hasNext() ; ) {
+					Transition transition = iterator.next();
+					
+					if( Objects.equals(state, transition.getTarget()) )
+						iterator.remove();
+				}
+			}
 		}
 	}
 }

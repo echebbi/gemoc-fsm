@@ -5,7 +5,7 @@
       <metamodel href="../../ice.master.fsm.xdsml.fsm/model/FSM.ecore#/"/>
       <defaultLayer name="Default"/>
       <additionalLayers name="Debug" activeByDefault="true">
-        <nodeMappings name="State" labelDirectEdit="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Edit%20State%20Label']" semanticCandidatesExpression="feature:states" domainClass="model::State">
+        <nodeMappings name="State" deletionDescription="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Delete%20State']" labelDirectEdit="//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@toolSections.2/@ownedTools[name='Edit%20State%20Label']" semanticCandidatesExpression="feature:states" domainClass="model::State">
           <style xsi:type="style:SquareDescription" labelSize="10" labelPosition="node" resizeKind="NSEW" width="8" height="8">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -157,6 +157,16 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="Delete State" forceRefresh="true">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteIncomingTransitions()">
+                <subModelOperations xsi:type="tool:RemoveElement"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool_1:DeleteElementDescription" name="Delete Nested State Machine">
             <element name="element"/>
             <elementView name="elementView"/>
@@ -164,7 +174,9 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
                 <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteRepresentations()">
-                  <subModelOperations xsi:type="tool:RemoveElement"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteIncomingTransitions()">
+                    <subModelOperations xsi:type="tool:RemoveElement"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
