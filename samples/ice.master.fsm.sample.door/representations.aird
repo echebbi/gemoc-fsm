@@ -60,7 +60,7 @@
           <children xmi:type="notation:Node" xmi:id="_GaN4uA3cEeiGW8hOb-dBsg" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaN4uQ3cEeiGW8hOb-dBsg" x="3" y="-11"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaN4sQ3cEeiGW8hOb-dBsg"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaN4sQ3cEeiGW8hOb-dBsg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_GaN4sg3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GaN4sw3cEeiGW8hOb-dBsg" points="[3, 7, -219, 2]$[218, 7, -4, 2]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GaOfwA3cEeiGW8hOb-dBsg" id="(0.9625,0.2125)"/>
@@ -76,7 +76,7 @@
           <children xmi:type="notation:Node" xmi:id="_GaOfyg3cEeiGW8hOb-dBsg" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaOfyw3cEeiGW8hOb-dBsg" x="12"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaOfww3cEeiGW8hOb-dBsg"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaOfww3cEeiGW8hOb-dBsg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_GaOfxA3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GaOfxQ3cEeiGW8hOb-dBsg" points="[0, 0, -105, 214]$[0, -220, -105, -6]$[100, -220, -5, -6]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GaOfzA3cEeiGW8hOb-dBsg" id="(0.5,0.0)"/>
@@ -92,7 +92,7 @@
           <children xmi:type="notation:Node" xmi:id="_GaPG1A3cEeiGW8hOb-dBsg" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaPG1Q3cEeiGW8hOb-dBsg" x="1" y="-9"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaOfzw3cEeiGW8hOb-dBsg"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaOfzw3cEeiGW8hOb-dBsg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_GaOf0A3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GaOf0Q3cEeiGW8hOb-dBsg" points="[0, -6, 225, -1]$[-215, -6, 10, -1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GaPG1g3cEeiGW8hOb-dBsg" id="(0.0,0.825)"/>
@@ -108,7 +108,7 @@
           <children xmi:type="notation:Node" xmi:id="_GaPG4A3cEeiGW8hOb-dBsg" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaPG4Q3cEeiGW8hOb-dBsg" x="1" y="-9"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaPG2Q3cEeiGW8hOb-dBsg"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaPG2Q3cEeiGW8hOb-dBsg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_GaPG2g3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GaPG2w3cEeiGW8hOb-dBsg" points="[0, 0, 125, 225]$[0, -225, 125, 0]$[-115, -225, 10, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GaPG4g3cEeiGW8hOb-dBsg" id="(0.5,0.0)"/>
@@ -124,7 +124,7 @@
           <children xmi:type="notation:Node" xmi:id="_GaPt6A3cEeiGW8hOb-dBsg" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GaPt6Q3cEeiGW8hOb-dBsg" x="9" y="5"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaPt4Q3cEeiGW8hOb-dBsg"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_GaPt4Q3cEeiGW8hOb-dBsg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_GaPt4g3cEeiGW8hOb-dBsg" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GaPt4w3cEeiGW8hOb-dBsg" points="[9, 10, -150, -185]$[159, 195, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GaPt6g3cEeiGW8hOb-dBsg" id="(0.45,0.875)"/>
@@ -168,7 +168,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GZxMyg3cEeiGW8hOb-dBsg" name="OnClose &#xA;[close]" sourceNode="_GZxMxA3cEeiGW8hOb-dBsg" targetNode="_GZxMxg3cEeiGW8hOb-dBsg">
       <target xmi:type="model:Transition" href="door.fsm#//@states.0/@outgoings.0"/>
       <semanticElements xmi:type="model:Transition" href="door.fsm#//@states.0/@outgoings.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxMyw3cEeiGW8hOb-dBsg" strokeColor="0,0,0">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxMyw3cEeiGW8hOb-dBsg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GZxMzA3cEeiGW8hOb-dBsg" showIcon="false"/>
       </ownedStyle>
@@ -177,7 +177,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GZxMzQ3cEeiGW8hOb-dBsg" name="OnBreak &#xA;[break]" sourceNode="_GZxMxA3cEeiGW8hOb-dBsg" targetNode="_GZxMyA3cEeiGW8hOb-dBsg">
       <target xmi:type="model:Transition" href="door.fsm#//@states.0/@outgoings.1"/>
       <semanticElements xmi:type="model:Transition" href="door.fsm#//@states.0/@outgoings.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxMzg3cEeiGW8hOb-dBsg" strokeColor="0,0,0">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxMzg3cEeiGW8hOb-dBsg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GZxMzw3cEeiGW8hOb-dBsg" showIcon="false"/>
       </ownedStyle>
@@ -186,7 +186,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GZxM0A3cEeiGW8hOb-dBsg" name="OnOpen &#xA;[open]" sourceNode="_GZxMxg3cEeiGW8hOb-dBsg" targetNode="_GZxMxA3cEeiGW8hOb-dBsg">
       <target xmi:type="model:Transition" href="door.fsm#//@states.1/@outgoings.0"/>
       <semanticElements xmi:type="model:Transition" href="door.fsm#//@states.1/@outgoings.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM0Q3cEeiGW8hOb-dBsg" strokeColor="0,0,0">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM0Q3cEeiGW8hOb-dBsg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GZxM0g3cEeiGW8hOb-dBsg" showIcon="false"/>
       </ownedStyle>
@@ -195,7 +195,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GZxM0w3cEeiGW8hOb-dBsg" name="OnBreak &#xA;[break]" sourceNode="_GZxMxg3cEeiGW8hOb-dBsg" targetNode="_GZxMyA3cEeiGW8hOb-dBsg">
       <target xmi:type="model:Transition" href="door.fsm#//@states.1/@outgoings.1"/>
       <semanticElements xmi:type="model:Transition" href="door.fsm#//@states.1/@outgoings.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM1A3cEeiGW8hOb-dBsg" strokeColor="0,0,0">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM1A3cEeiGW8hOb-dBsg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GZxM1Q3cEeiGW8hOb-dBsg" showIcon="false"/>
       </ownedStyle>
@@ -204,7 +204,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GZxM1g3cEeiGW8hOb-dBsg" name="OnRepair &#xA;[repair]" sourceNode="_GZxMyA3cEeiGW8hOb-dBsg" targetNode="_GZxMxg3cEeiGW8hOb-dBsg">
       <target xmi:type="model:Transition" href="door.fsm#//@states.2/@outgoings.0"/>
       <semanticElements xmi:type="model:Transition" href="door.fsm#//@states.2/@outgoings.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM1w3cEeiGW8hOb-dBsg" strokeColor="0,0,0">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GZxM1w3cEeiGW8hOb-dBsg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ice.master.fsm.design/description/FSM.odesign#//@ownedViewpoints[name='Finite%20State%20Machine']/@ownedRepresentations[name='Finite%20State%20Machine%20in%20a%20State%20Diagram']/@additionalLayers[name='Debug']/@edgeMappings[name='Transition']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GZxM2A3cEeiGW8hOb-dBsg" showIcon="false"/>
       </ownedStyle>

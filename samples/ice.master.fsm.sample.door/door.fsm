@@ -10,6 +10,5 @@
   </states>
   <states xsi:type="model:State" name="Broken">
     <outgoings target="//@states.1" name="OnRepair" trigger="repair"/>
-    <outgoings name="OnBurn" trigger="burn"/>
   </states>
 </model:FiniteStateMachine>
